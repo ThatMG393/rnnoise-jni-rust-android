@@ -30,8 +30,12 @@ pub unsafe extern "system" fn Java_com_plasmoverse_rnnoise_Denoise_processNative
     match denoise_process(&mut env, denoise, samples) {
         Ok(processed) => processed,
         Err(exception) => {
+            let result = env.new_float_array(0)
+                .expect("Couldn't create java float array");
+
             env.throw_new_exception(exception);
-            env.new_float_array(0).expect("") // todo: ???
+
+            result
         }
     }
 }
