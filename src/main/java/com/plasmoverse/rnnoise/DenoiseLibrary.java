@@ -83,7 +83,7 @@ public final class DenoiseLibrary {
             case "aarch64":
                 return "aarch64";
             default:
-                return OS_ARCH;
+                return systemArch;
         }
     }
 
@@ -96,7 +96,7 @@ public final class DenoiseLibrary {
             case "windows":
                 return library + ".dll";
             default:
-                throw new IllegalStateException("System is not supported: " + systemName);
+                throw new IllegalStateException("System is not supported: " + getPlatformName());
         }
     }
 
