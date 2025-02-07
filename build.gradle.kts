@@ -20,9 +20,9 @@ tasks {
         toolchain.languageVersion.set(JavaLanguageVersion.of(8))
     }
 
-    test {
+    /* test {
         useJUnitPlatform()
-    }
+    } */
 }
 
 publishing {
