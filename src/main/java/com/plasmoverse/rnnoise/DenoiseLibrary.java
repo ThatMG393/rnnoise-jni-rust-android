@@ -28,7 +28,7 @@ public final class DenoiseLibrary {
         String platformFolder = getPlatformFolderName();
         String nativeLibraryPath = String.format("/natives/%s/%s", platformFolder, libraryName);
 
-        InputStream source = OpusLibrary.class.getResourceAsStream(nativeLibraryPath);
+        InputStream source = DenoiseLibrary.class.getResourceAsStream(nativeLibraryPath);
         if (source == null) {
             throw new IOException("Couldn't find the native library for " + platformFolder + ": " + nativeLibraryPath);
         }
