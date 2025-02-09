@@ -24,7 +24,7 @@ public final class DenoiseLibrary {
         File temporaryDir = Files.createTempDirectory("rnnoise-jni-rust").toFile();
         temporaryDir.deleteOnExit();
 
-        String libraryName = getPlatformLibraryFileName("rnnoise-jni-rust");
+        String libraryName = getPlatformLibraryFileName("rnnoise_jni_rust");
         String platformFolder = getPlatformFolderName();
         String nativeLibraryPath = String.format("/natives/%s/%s", platformFolder, libraryName);
 
